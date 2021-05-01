@@ -1,0 +1,360 @@
+*{
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-family: 'Source Code Pro', monospace;
+}
+.red{
+    background: red;
+}
+::-webkit-scrollbar {
+    display: none;
+  }
+html{
+    height: fit-content;
+    height: -moz-fit-content;
+    width: 100vw;
+    scroll-behavior: smooth;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background: hsl(48, 100%, 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+.section{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    height: -moz-fit-content;
+    width: 100%;
+}
+.section__content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-header{
+    z-index: 10000;
+    position: fixed;
+    top: 0px;
+    height: 80px;
+    width: 80%;
+    /* padding: 0 10%; */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background: hsl(48, 100%, 50%);
+    background: hsl(0, 0%, 30%);
+    background: hsl(48, 100%, 60%);
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: hsl(48, 100%, 40%);
+    /* border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: hsl(0, 0%, 30%); */
+}
+.scrolling-button-container{
+    
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    height: 60px;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    /* background: hsl(48, 100%, 40%); */
+    overflow: hidden;
+}
+.scrolling-button-highlight{
+    z-index: 100;
+    position: absolute;
+    left: 10px;
+    height: calc(100% - 20px);
+    width: calc((100% - 20px) / 3);
+    background: hsl(48, 100%, 10%);
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+.scrolling-button-highlight--resizing{
+    transition: none;
+}
+.scrolling-button{
+    display: flex;
+    align-items: center;
+    z-index: 101;
+    width: calc(100% / 3);
+    height: 100%;
+    position: relative;
+    font-size: 16px;
+    color: hsl(0, 0%, 30%);
+    padding: 10px;
+    box-sizing: border-box;
+    color: hsl(48, 100%, 10%);
+    transition: all .2s ease-in-out;
+    font-weight: bold;
+}
+.scrolling-button span{
+    /* display: none; */
+    font-weight: 400;
+    color: hsl(48, 100%, 25%);
+    transition: all .2s ease-in-out;
+}
+.scrolling-button--selected span{
+    color: white;
+}
+.scrolling-button:hover span{
+    display: initial;
+}
+/* .scrolling-button::before{
+    position: absolute;
+    left: 0px;
+    content: "";
+    height: 25px;
+    width: 100%;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: hsl(48, 100%, 10%);
+} */
+/* .scrolling-button:last-child{
+    border: none;
+} */
+.scrolling-button--selected::before{
+    display: none;
+}
+.scrolling-button::after{
+    content: "";
+    mask-size: 20px 20px;
+    -webkit-mask-size: 20px 20px;
+    position: absolute;
+    right: 10px;
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: hsl(48, 100%, 10%);
+    transition: all .2s ease-in-out;
+}
+.scrolling-button:hover::after{
+    transform: rotateZ(-45deg);
+}
+.scrolling-button--selected::after{
+    background: hsl(48, 100%, 60%);
+}
+.scrolling-button--about::after{
+    -webkit-mask: url("../svg/about.svg") no-repeat center;
+    mask: url("../svg/about.svg") no-repeat center;
+}
+.scrolling-button--portfolio::after{
+    -webkit-mask: url("../svg/folder.svg") no-repeat center;
+    mask: url("../svg/folder.svg") no-repeat center;
+}
+.scrolling-button--contact::after{
+    -webkit-mask: url("../svg/contact.svg") no-repeat center;
+    mask: url("../svg/contact.svg") no-repeat center;
+}
+.scrolling-button--selected{
+    color: hsl(48, 100%, 60%)
+}
+.contact-buttons{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+}
+.contact-buttons__button{
+    height: 30px;
+    width: 30px;
+    background: hsl(48, 100%, 10%);
+    margin-left: 20px;
+    transition: all .2s ease-in-out;
+}
+.contact-buttons__button--github{
+    -webkit-mask: url("../svg/github.svg") no-repeat center;
+    mask: url("../svg/github.svg") no-repeat center;
+    mask-size: 30px 30px;
+    -webkit-mask-size: 30px 30px;
+}
+.contact-buttons__button--linkedin{
+    -webkit-mask: url("../svg/linkedin.svg") no-repeat center;
+    mask: url("../svg/linkedin.svg") no-repeat center;
+    mask-size: 30px 30px;
+    -webkit-mask-size: 30px 30px;
+}
+.contact-buttons__button:hover{
+    background: white;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+
+    *{
+        margin: 0;
+        border: none;
+        padding: 0;
+        font-family: 'Source Code Pro', monospace;
+    }
+    body{
+        height: 100%;
+        width: 100%;
+        background: hsl(48, 100%, 60%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+    }
+    .contact-buttons{
+        display: none;
+    }
+    .section{
+        display: flex;
+        justify-content: center;
+        height: fit-content;
+        height: -moz-fit-content;
+        width: 100%;
+    }
+    .section__content{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .page-header{
+        z-index: 10000;
+        position: sticky;
+        top: 0px;
+        height: 80px;
+        width: 100%;
+        /* padding: 0 10%; */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: hsl(48, 100%, 50%);
+        background: hsl(0, 0%, 30%);
+        background: hsl(48, 100%, 60%);
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: hsl(48, 100%, 40%);
+        /* border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: hsl(0, 0%, 30%); */
+    }
+    .scrolling-button-container{
+        
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+        height: 60px;
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        /* background: hsl(48, 100%, 40%); */
+        overflow: hidden;
+    }
+    .scrolling-button-highlight{
+        z-index: 100;
+        position: absolute;
+        left: 10px;
+        height: calc(100% - 20px);
+        width: calc((100% - 20px) / 3);
+        background: hsl(48, 100%, 10%);
+        border-radius: 5px;
+        transition: all .2s ease-in-out;
+    }
+    .scrolling-button-highlight--resizing{
+        transition: none;
+    }
+    .scrolling-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 101;
+        width: calc(100% / 3);
+        height: 100%;
+        position: relative;
+        font-size: 13px;
+        color: hsl(0, 0%, 30%);
+        padding: 10px;
+        box-sizing: border-box;
+        color: hsl(48, 100%, 10%);
+        transition: all .2s ease-in-out;
+        font-weight: bold;
+    }
+    .scrolling-button span{
+        /* display: none; */
+        font-weight: 400;
+        color: hsl(48, 100%, 25%);
+        transition: all .2s ease-in-out;
+    }
+    .scrolling-button--selected span{
+        color: white;
+    }
+    .scrolling-button:hover span{
+        display: initial;
+    }
+    /* .scrolling-button::before{
+        position: absolute;
+        left: 0px;
+        content: "";
+        height: 25px;
+        width: 100%;
+        border-width: 0 0 0 1px;
+        border-style: solid;
+        border-color: hsl(48, 100%, 10%);
+    } */
+    /* .scrolling-button:last-child{
+        border: none;
+    } */
+    .scrolling-button--selected::before{
+        display: none;
+    }
+    .scrolling-button::after{
+        content: "";
+        mask-size: 20px 20px;
+        -webkit-mask-size: 20px 20px;
+        position: absolute;
+        right: 10px;
+        content: "";
+        height: 20px;
+        width: 20px;
+        background: hsl(48, 100%, 10%);
+        transition: all .2s ease-in-out;
+        display: none;
+    }
+    .scrolling-button:hover::after{
+        transform: rotateZ(-45deg);
+    }
+    .scrolling-button--selected::after{
+        background: hsl(48, 100%, 60%);
+    }
+    .scrolling-button--about::after{
+        -webkit-mask: url("../svg/about.svg") no-repeat center;
+        mask: url("../svg/about.svg") no-repeat center;
+    }
+    .scrolling-button--portfolio::after{
+        -webkit-mask: url("../svg/folder.svg") no-repeat center;
+        mask: url("../svg/folder.svg") no-repeat center;
+    }
+    .scrolling-button--contact::after{
+        -webkit-mask: url("../svg/contact.svg") no-repeat center;
+        mask: url("../svg/contact.svg") no-repeat center;
+    }
+    .scrolling-button--selected{
+        color: hsl(48, 100%, 60%);
+    }
+}

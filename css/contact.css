@@ -1,0 +1,72 @@
+.section--contact{
+    height: fit-content;
+    height: -moz-fit-content;
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+.section--contact .section__content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-message{
+    font-size: 30px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.contact-items{
+    height: fit-content;
+    height: -moz-fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.contact-items__item{
+    height: fit-content;
+    height: -moz-fit-content;
+    flex: 1;
+    flex-shrink: 0;
+    background: hsl(48, 100%, 10%);
+    margin: 5px;
+    border-radius: 5px 20px 5px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    font-size: clamp(13px, 1vw, 20px);
+}
+.contact-items__icon{
+    height: 70px;
+    width: 70px;
+    background: hsl(48, 100%, 60%);
+    margin-bottom: 10px;
+}
+.contact-items__item--github .contact-items__icon{
+    -webkit-mask: url("../svg/github.svg") no-repeat center;
+    -webkit-mask-size: 70px 70px;
+    mask-size: 70px 70px;
+}
+.contact-items__item--linkedin .contact-items__icon{
+    -webkit-mask: url("../svg/linkedin.svg") no-repeat center;
+    -webkit-mask-size: 70px 70px;
+    mask-size: 70px 70px;
+}
+.contact-items__item--email .contact-items__icon{
+    -webkit-mask: url("../svg/contact.svg") no-repeat center;
+    -webkit-mask-size: 70px 70px;
+    mask-size: 70px 70px;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+
+
+}

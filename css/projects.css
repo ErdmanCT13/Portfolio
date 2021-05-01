@@ -1,0 +1,416 @@
+.section--projects{
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 500px;
+}
+.project-list{
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    width: calc(80%);
+}
+
+.project-list__item{
+    padding: 30px 0;
+    height: 600px;
+    width: calc(100%/3 - 20px);
+    /* border-radius: 5px 30px 5px 30px; */
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: hsl(0, 0%, 30%);
+    /* border-width: 3px;
+    border-color: hsl(0, 0%, 30%);
+    border-style: solid; */
+    margin: 10px;
+    /* box-sizing: border-box; */
+    display: flex;
+    flex-direction: column;
+    /* background: hsl(0, 0%, 20%); */
+}
+.project-list__item-body{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.project-list__item-description{
+    border-radius: 5px 20px 5px 20px;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: hsl(0, 0%, 30%);
+    padding: 0 10px 10px 10px;
+    box-sizing: border-box;
+    color: hsl(48, 100%, 60%); /* #ffd633, */
+}
+.project-list__item-summary{
+    flex: 1;
+    background: hsl(0, 0%, 25%);
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    overflow: hidden;
+}
+.project-list__item-summary::before{
+    content: "About";
+    font-weight: bold;
+    font-size: 12px;
+    height: -moz-fit-content;
+    width: -moz-fit-content;
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 10px;
+    /* background: hsl(48, 100%, 50%); */
+    /* background: hsl(0, 0%, 20%); */
+    border-width: 2px;
+    border-style: solid;
+    border-color: hsl(48, 100%, 50%);
+    padding: 3px 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-list__item-description span{
+    background: hsl(48, 100%, 10%);
+    padding: 3px 5px;
+    margin: 0 3px;
+    border-radius: 5px;
+}
+div.project-list__item-link{
+    color: hsl(48, 100%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 5px 5px 10px;
+    height: 30px;
+    background: hsl(48, 100%, 10%);
+    padding: 5px 5px;
+    margin-top: 10px;
+    transition: background .5s ease-in-out, color .8s ease-in-out;
+    /* background: hsl(320, 60%, 30%);
+    color: hsl(320, 60%, 60%);
+    background: hsl(0, 0%, 10%);
+    color: hsl(0, 0%, 100%);
+    background: #FFD633;
+    background: -webkit-linear-gradient(right, #FFD633, #1A1A1A);
+    background: -moz-linear-gradient(right, #FFD633, #1A1A1A);
+    background: linear-gradient(to left, #FFD633, #1A1A1A); */
+}
+div.project-list__item-link:hover{
+    background: hsl(48, 100%, 60%);
+    color: hsl(48, 100%, 10%);
+}
+
+.project-list__item a {
+    text-decoration: none;
+}
+div.project-list__item-link::after{
+    content: "";
+    height: 20px;
+    width: 20px;
+    -webkit-mask: url("../svg/link.svg") no-repeat center;
+    -webkit-mask-size: 20px 20px;
+    mask: url("../svg/link.svg") no-repeat center;
+    mask-size: 20px 20px;
+    background: hsl(48, 100%, 60%);
+    margin-left: 10px;
+    transition: all .2s ease-out;
+}
+div.project-list__item-link:hover::after{
+    transform: rotateZ(-45deg);
+    background: hsl(48, 100%, 10%);
+}
+/* .project-list__item-link::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: hsl(48, 100%, 50%);
+    position: absolute;
+    left: 30px;
+} */
+.project-list__item-tags{
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.project-list__item-tag{
+    font-size: 12px;
+    background: hsl(48, 100%, 50%);
+    color: hsl(0, 0%, 30%);
+    border-radius: 5px;
+    height: 30px;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-list__item-header{
+    font-size: clamp(16px, 5vw, 25px);
+    font-weight: 600;
+    width: 100%;
+}
+.project-list__item-date{
+    font-weight: 400;
+    font-size: clamp(16px, 1vw, 15px);
+    margin-bottom: 10px;
+}
+.project-list__item-preview{
+    border-radius: 5px 20px 5px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    flex: 1;
+    width: 100%;
+    margin-bottom: 10px;
+    /* background-image: url("https://searchengineland.com/figz/wp-content/seloads/2015/12/google-amp-fast-speed-travel-ss-1920.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(48, 100%, 10%);
+}
+.project-list__item-preview::after{
+    z-index: 100;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-mask: url("../svg/folder.svg") no-repeat center;
+    -webkit-mask-size: 50px 50px;
+    mask: url("../svg/folder.svg") no-repeat center;
+    mask-size: 50px 50px;
+    background: hsl(48, 100%, 60%);
+}
+.project-list__item-preview--loaded::after{ /* hide the default background */ 
+    display: none;
+}
+.project-list__item-preview canvas{
+    height: 100%;
+    width: auto;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1700px) {
+    .project-list{
+        height: -moz-fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        width: calc(80%);
+    }
+    
+    .project-list__item{
+        padding: 30px 0;
+        height: -moz-fit-content;
+        height: fit-content;
+        width: calc(100% - 0px);
+        /* border-radius: 5px 30px 5px 30px; */
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: hsl(0, 0%, 30%);
+        /* border-width: 3px;
+        border-color: hsl(0, 0%, 30%);
+        border-style: solid; */
+        margin: 10px 0;
+        /* box-sizing: border-box; */
+        display: flex;
+        flex-direction: column;
+        /* background: hsl(0, 0%, 20%); */
+    
+    }
+    .project-list__item-body{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .project-list__item-description{
+        border-radius: 5px 5px 5px 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        background: hsl(0, 0%, 30%);
+        padding: 0 10px 10px 10px;
+        box-sizing: border-box;
+        color: hsl(48, 100%, 60%); /* #ffd633, */
+    }
+    .project-list__item-summary{
+        flex: 1;
+        background: hsl(0, 0%, 25%);
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+    }
+    .project-list__item-summary::before{
+        content: "About";
+        font-weight: bold;
+        font-size: 12px;
+        width: -moz-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        width: fit-content;
+  
+        margin-bottom: 10px;
+        /* background: hsl(48, 100%, 50%); */
+        /* background: hsl(0, 0%, 20%); */
+        border-width: 2px;
+        border-style: solid;
+        border-color: hsl(48, 100%, 50%);
+        padding: 3px 5px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .project-list__item-description span{
+        background: hsl(48, 100%, 10%);
+        padding: 3px 5px;
+        margin: 0 3px;
+        border-radius: 5px;
+    }
+    div.project-list__item-link{
+        color: hsl(48, 100%, 50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px 5px 5px 10px;
+        height: 30px;
+        background: hsl(48, 100%, 10%);
+        padding: 5px 5px;
+        margin-top: 10px;
+        transition: background .5s ease-in-out, color .8s ease-in-out;
+        /* background: hsl(320, 60%, 30%);
+        color: hsl(320, 60%, 60%);
+        background: hsl(0, 0%, 10%);
+        color: hsl(0, 0%, 100%);
+        background: #FFD633;
+        background: -webkit-linear-gradient(right, #FFD633, #1A1A1A);
+        background: -moz-linear-gradient(right, #FFD633, #1A1A1A);
+        background: linear-gradient(to left, #FFD633, #1A1A1A); */
+    }
+    div.project-list__item-link:hover{
+        background: hsl(48, 100%, 60%);
+        color: hsl(48, 100%, 10%);
+    }
+    
+    .project-list__item a {
+        text-decoration: none;
+    }
+    div.project-list__item-link::after{
+        content: "";
+        height: 20px;
+        width: 20px;
+        -webkit-mask: url("../svg/link.svg") no-repeat center;
+        -webkit-mask-size: 20px 20px;
+        mask: url("../svg/link.svg") no-repeat center;
+        mask-size: 20px 20px;
+        background: hsl(48, 100%, 60%);
+        margin-left: 10px;
+        transition: all .2s ease-out;
+    }
+    div.project-list__item-link:hover::after{
+        transform: rotateZ(-45deg);
+        background: hsl(48, 100%, 10%);
+    }
+    /* .project-list__item-link::after{
+        content: "";
+        width: 30px;
+        height: 30px;
+        background: hsl(48, 100%, 50%);
+        position: absolute;
+        left: 30px;
+    } */
+    .project-list__item-tags{
+        height: -moz-fit-content;
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    .project-list__item-tag{
+        font-size: 12px;
+        background: hsl(48, 100%, 50%);
+        color: hsl(0, 0%, 30%);
+        border-radius: 5px;
+        height: 30px;
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 0 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .project-list__item-preview{
+        border-radius: 5px 20px 5px 5px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        height: 200px;
+        width: 100%;
+        /* background-image: url("https://searchengineland.com/figz/wp-content/seloads/2015/12/google-amp-fast-speed-travel-ss-1920.jpg"); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all .2s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: hsl(48, 100%, 10%);
+        margin-bottom: 10px;
+    }
+    .project-list__item-preview::after{
+        z-index: 100;
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask: url("../svg/folder.svg") no-repeat center;
+        -webkit-mask-size: 50px 50px;
+        mask: url("../svg/folder.svg") no-repeat center;
+        mask-size: 50px 50px;
+        background: hsl(48, 100%, 60%);
+    }
+    .project-list__item-preview--loaded::after{ /* hide the default background */ 
+        display: none;
+    }
+    .project-list__item-preview canvas{
+        height: 100%;
+        width: auto;
+    } 
+}
